@@ -7,13 +7,15 @@ import androidx.lifecycle.ViewModel;
 
 import com.squareup.picasso.Picasso;
 
-import smartpan.sa.mvvmsmartpansample.model.pojo.categories.CategoriesResponse;
+import smartpan.sa.mvvmsmartpansample.model.pojo.bestlist.BestOfferListItem;
+import smartpan.sa.mvvmsmartpansample.model.pojo.bestlist.SizeListItem;
 import smartpan.sa.mvvmsmartpansample.model.pojo.categories.CategoryListItem;
+import smartpan.sa.mvvmsmartpansample.model.pojo.siteslider.SiteSliderListItem;
 
-public class ItemViewModel extends ViewModel {
-    CategoryListItem item;
+public class ItemViewModel<T> extends ViewModel {
+    T item;
 
-    public ItemViewModel(CategoryListItem item) {
+    public ItemViewModel(T item) {
         this.item = item;
     }
 
@@ -22,16 +24,28 @@ public class ItemViewModel extends ViewModel {
         Picasso.with(imageView.getContext()).load(url).into(imageView);
     }
 
-    public void setItem(CategoryListItem item) {
+    public void setItem(T item) {
         this.item = item;
     }
 
     public String getName() {
-        return item.getEnglishName();
+        if (item instanceof CategoryListItem)
+            return ((CategoryListItem) item).getEnglishName();
+        else if (item instanceof BestOfferListItem)
+            return ((BestOfferListItem) item).getEnglishName();
+        else if (item instanceof SiteSliderListItem)
+            return ((SiteSliderListItem) item).getHeaderEN();
+        return null;
     }
 
     public String getImageUrl() {
-        return item.getCategoryImage();
+        if (item instanceof CategoryListItem)
+            return ((CategoryListItem) item).getCategoryImage();
+        else if (item instanceof BestOfferListItem)
+            return ((BestOfferListItem) item).getCategoryImage();
+        else if (item instanceof SiteSliderListItem)
+            return ((SiteSliderListItem) item).getStoryImage();
+        return null;
     }
 
 

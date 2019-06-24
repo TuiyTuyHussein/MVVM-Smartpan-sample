@@ -10,13 +10,18 @@ import android.os.Bundle;
 
 import smartpan.sa.mvvmsmartpansample.R;
 import smartpan.sa.mvvmsmartpansample.databinding.ActivityMainBinding;
+import smartpan.sa.mvvmsmartpansample.model.pojo.bestlist.BestOfferListItem;
+import smartpan.sa.mvvmsmartpansample.model.pojo.categories.CategoryListItem;
+import smartpan.sa.mvvmsmartpansample.model.pojo.siteslider.SiteSliderListItem;
 import smartpan.sa.mvvmsmartpansample.viewmodel.MainViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
     private MainViewModel mainViewModel;
-    private CategoriesAdapter categoriesAdapter;
+    private ItemsAdapter<CategoryListItem> categoriesAdapter;
+    private ItemsAdapter<BestOfferListItem> bestOfferListItemItemsAdapter;
+    private ItemsAdapter<SiteSliderListItem> siteSliderListItemItemsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,22 +29,38 @@ public class MainActivity extends AppCompatActivity {
         initDataBinding();
         initRecyclerView();
 
-        getCategories();
+        observeRequests();
     }
 
     private void initRecyclerView() {
-        categoriesAdapter = new CategoriesAdapter();
+        categoriesAdapter = new ItemsAdapter<>();
+        bestOfferListItemItemsAdapter = new ItemsAdapter<>();
+        siteSliderListItemItemsAdapter = new ItemsAdapter<>();
         binding.rvCategories.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
+        binding.rvBestList.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
+        binding.rvSiteSlider.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
         binding.rvCategories.setAdapter(categoriesAdapter);
+        binding.rvBestList.setAdapter(bestOfferListItemItemsAdapter);
+        binding.rvSiteSlider.setAdapter(siteSliderListItemItemsAdapter);
     }
 
-    private void getCategories() {
+    private void observeRequests() {
         mainViewModel.getCategoriesMutableLiveData()
-                .observe(this, categoriesResponse -> {
-                    categoriesAdapter.setCategoriesList(categoriesResponse.getCategoryList());
+                .observe(this, response -> {
+                    categoriesAdapter.setArray(response.getCategoryList());
                 });
 
 
+        mainViewModel.getBestListMutableLiveData()
+                .observe(this, response -> {
+                    bestOfferListItemItemsAdapter.setArray(response.getData().getBestOfferList());
+                });
+
+
+        mainViewModel.getSiteSliderMutableLiveData()
+                .observe(this, response -> {
+                    siteSliderListItemItemsAdapter.setArray(response.getSiteSliderList());
+                });
     }
 
 
@@ -52,8 +73,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mainViewModel.unbind();
     }
 }

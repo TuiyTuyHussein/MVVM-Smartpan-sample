@@ -20,9 +20,7 @@
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            app:title="TopTato"
-            app:titleTextColor="#ffffff" />
+            app:title="TopTato" />
 
 
         <androidx.core.widget.NestedScrollView
@@ -41,7 +39,7 @@
                     android:layout_margin="20dp"
                     android:text="Categories"
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                    android:textColor="@color/colorPrimary" />
+                    android:textColor="#30BD90" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvCategories"
@@ -54,48 +52,44 @@
                 </androidx.recyclerview.widget.RecyclerView>
 
 
-                <!--<TextView-->
-                <!--android:layout_margin="20dp"-->
-                <!--android:textColor="@color/colorPrimary"-->
-                <!--android:textAppearance="@style/TextAppearance.AppCompat.Headline"-->
-                <!--android:text="Best List"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content" />-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="Best List"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="#30BD90" />
 
-                <!--<androidx.recyclerview.widget.RecyclerView-->
-                <!--android:id="@+id/rvBestList"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:orientation="horizontal"-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvBestList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
-                <!--app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-                <!--app:visibility="@{mainViewModel.peopleRecycler}"-->
-                <!--tools:listitem="@layout/item_row"-->
-                <!--&gt;-->
+                    tools:listitem="@layout/item_row">
 
-                <!--</androidx.recyclerview.widget.RecyclerView>-->
+                </androidx.recyclerview.widget.RecyclerView>
 
 
-                <!--<TextView-->
-                <!--android:layout_margin="20dp"-->
-                <!--android:textColor="@color/colorPrimary"-->
-                <!--android:textAppearance="@style/TextAppearance.AppCompat.Headline"-->
-                <!--android:text="Slider"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content" />-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="Slider"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="#30BD90" />
 
-                <!--<androidx.recyclerview.widget.RecyclerView-->
-                <!--android:id="@+id/rvSiteSlider"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:orientation="horizontal"-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSiteSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
 
-                <!--app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-                <!--app:visibility="@{mainViewModel.peopleRecycler}"-->
-                <!--tools:listitem="@layout/item_row"-->
-                <!--&gt;-->
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_row">
 
-                <!--</androidx.recyclerview.widget.RecyclerView>-->
+                </androidx.recyclerview.widget.RecyclerView>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

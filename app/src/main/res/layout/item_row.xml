@@ -12,13 +12,14 @@
     </data>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
+            android:layout_margin="10dp"
             android:layout_height="wrap_content">
 
             <LinearLayout
@@ -27,6 +28,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:scaleType="centerCrop"
                     android:id="@+id/ivRowItem"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"

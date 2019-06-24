@@ -3,24 +3,6 @@
     <color name="colorPrimary">#f7f6f0</color>
     <color name="colorPrimaryDark">#c1aa7c</color>
     <color name="colorAccent">#767474</color>
-    <color name="colorEditText">#ededed</color>
-    <color name="colorText">#919599</color>
-    <color name="colorWhite">#ffffff</color>
-    <color name="colorBg">#ece6da</color>
-    <color name="colorBgDark">#c1aa7c</color>
-    <color name="colorRed">#c20000</color>
-    <color name="colorGreen">#0db529</color>
-    <color name="yellow">#FFEB3B</color>
-    <color name="red">#F44336</color>
-    <color name="orange">#ff6600</color>
-    <color name="black">#000</color>
-    <color name="transparent">#70000000</color>
-    <color name="transparent_page">#99c1aa7c</color>
-    <color name="transparent_white">#99ffffff</color>
-    <color name="transparent_colorPrimary">#99f7f6f0</color>
-    <color name="grey">#e3e3e3</color>
-    <color name="yellow_dark">#f6efe2</color>
-    <color name="transparent_red">#ffcaca</color>
 
 
 </resources>

@@ -30,6 +30,7 @@ public class MainViewModel extends ViewModel {
     }
 
     public MutableLiveData<BestListResponse> getBestListMutableLiveData() {
+        loadBestList();
         return bestListMutableLiveData;
     }
 
@@ -39,6 +40,7 @@ public class MainViewModel extends ViewModel {
     }
 
     public MutableLiveData<SiteSliderResponse> getSiteSliderMutableLiveData() {
+        loadSiteSlide();
         return siteSliderMutableLiveData;
     }
 
@@ -54,7 +56,7 @@ public class MainViewModel extends ViewModel {
     }
 
 
-    public void loadBestList() {
+    private void loadBestList() {
         compositeDisposable.add(ApiServicesBestList
                 .open(context).getBestListObservable()
                 .observeOn(AndroidSchedulers.mainThread())
@@ -66,7 +68,7 @@ public class MainViewModel extends ViewModel {
     }
 
 
-    public void loadSiteSlide() {
+    private void loadSiteSlide() {
         compositeDisposable.add(ApiServicesSiteSlider
                 .open(context).getSiteSliderObservable()
                 .observeOn(AndroidSchedulers.mainThread())

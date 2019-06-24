@@ -28,51 +28,50 @@ import java.util.List;
 
 import smartpan.sa.mvvmsmartpansample.R;
 import smartpan.sa.mvvmsmartpansample.databinding.ItemRowBinding;
-import smartpan.sa.mvvmsmartpansample.model.pojo.categories.CategoryListItem;
 import smartpan.sa.mvvmsmartpansample.viewmodel.ItemViewModel;
 
-public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.CategoriesAdapterViewHolder> {
+public class ItemsAdapter<T> extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> {
 
-    private List<CategoryListItem> categoriesList = new LinkedList<>();
+    private List<T> array = new LinkedList<>();
 
-    CategoriesAdapter() {
+    ItemsAdapter() {
     }
 
     @NonNull
     @Override
-    public CategoriesAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemRowBinding itemBinding =
                 DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.item_row,
                         parent, false);
-        return new CategoriesAdapterViewHolder(itemBinding);
+        return new ViewHolder(itemBinding);
     }
 
     @Override
-    public void onBindViewHolder(CategoriesAdapterViewHolder holder, int position) {
-        holder.bindItem(categoriesList.get(position));
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        holder.bindItem(array.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return categoriesList.size();
+        return array.size();
     }
 
-    void setCategoriesList(List<CategoryListItem> categoriesList) {
-        if (categoriesList == null || categoriesList.size() == 0) return;
-        this.categoriesList.clear();
-        this.categoriesList.addAll(categoriesList);
+    void setArray(List<T> array) {
+        if (array == null || array.size() == 0) return;
+        this.array.clear();
+        this.array.addAll(array);
         notifyDataSetChanged();
     }
 
-    static class CategoriesAdapterViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder<T> extends RecyclerView.ViewHolder {
         ItemRowBinding mItemRowBinding;
 
-        CategoriesAdapterViewHolder(ItemRowBinding itemPeopleBinding) {
+        ViewHolder(ItemRowBinding itemPeopleBinding) {
             super(itemPeopleBinding.getRoot());
             this.mItemRowBinding = itemPeopleBinding;
         }
 
-        void bindItem(CategoryListItem item) {
+        void bindItem(T item) {
             if (mItemRowBinding.getItemViewModel() == null) {
                 mItemRowBinding.setItemViewModel(new ItemViewModel(item));
             } else {
