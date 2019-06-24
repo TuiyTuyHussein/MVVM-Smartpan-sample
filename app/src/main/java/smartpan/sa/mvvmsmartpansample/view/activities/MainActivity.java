@@ -46,21 +46,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void observeRequests() {
         mainViewModel.getCategoriesMutableLiveData()
-                .observe(this, response -> {
-                    categoriesAdapter.setArray(response.getCategoryList());
-                });
+                .observe(this, response -> categoriesAdapter.setArray(response.getCategoryList()));
 
 
         mainViewModel.getBestListMutableLiveData()
-                .observe(this, response -> {
-                    bestOfferListItemItemsAdapter.setArray(response.getData().getBestOfferList());
-                });
+                .observe(this, response -> bestOfferListItemItemsAdapter.setArray(response.getData().getBestOfferList()));
 
 
         mainViewModel.getSiteSliderMutableLiveData()
-                .observe(this, response -> {
-                    siteSliderListItemItemsAdapter.setArray(response.getSiteSliderList());
-                });
+                .observe(this, response -> siteSliderListItemItemsAdapter.setArray(response.getSiteSliderList()));
     }
 
 

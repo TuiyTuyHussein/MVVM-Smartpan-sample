@@ -30,7 +30,7 @@ import smartpan.sa.mvvmsmartpansample.R;
 import smartpan.sa.mvvmsmartpansample.databinding.ItemRowBinding;
 import smartpan.sa.mvvmsmartpansample.viewmodel.ItemViewModel;
 
-public class ItemsAdapter<T> extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> {
+public class ItemsAdapter<T> extends RecyclerView.Adapter<ItemsAdapter.ViewHolder<T>> {
 
     private List<T> array = new LinkedList<>();
 
@@ -39,17 +39,18 @@ public class ItemsAdapter<T> extends RecyclerView.Adapter<ItemsAdapter.ViewHolde
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder<T> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemRowBinding itemBinding =
                 DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.item_row,
                         parent, false);
-        return new ViewHolder(itemBinding);
+        return new ViewHolder<>(itemBinding);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder<T> holder, int position) {
         holder.bindItem(array.get(position));
     }
+
 
     @Override
     public int getItemCount() {
@@ -73,7 +74,7 @@ public class ItemsAdapter<T> extends RecyclerView.Adapter<ItemsAdapter.ViewHolde
 
         void bindItem(T item) {
             if (mItemRowBinding.getItemViewModel() == null) {
-                mItemRowBinding.setItemViewModel(new ItemViewModel(item));
+                mItemRowBinding.setItemViewModel(new ItemViewModel<>(item));
             } else {
                 mItemRowBinding.getItemViewModel().setItem(item);
             }

@@ -1,6 +1,8 @@
 package smartpan.sa.mvvmsmartpansample.viewmodel;
 
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.databinding.BindingAdapter;
 import androidx.lifecycle.ViewModel;
@@ -8,7 +10,6 @@ import androidx.lifecycle.ViewModel;
 import com.squareup.picasso.Picasso;
 
 import smartpan.sa.mvvmsmartpansample.model.pojo.bestlist.BestOfferListItem;
-import smartpan.sa.mvvmsmartpansample.model.pojo.bestlist.SizeListItem;
 import smartpan.sa.mvvmsmartpansample.model.pojo.categories.CategoryListItem;
 import smartpan.sa.mvvmsmartpansample.model.pojo.siteslider.SiteSliderListItem;
 
@@ -48,5 +49,9 @@ public class ItemViewModel<T> extends ViewModel {
         return null;
     }
 
+
+    public void onClick(View view) {
+        Toast.makeText(view.getContext(), "It's All Right \n" + getName(), Toast.LENGTH_LONG).show();
+    }
 
 }

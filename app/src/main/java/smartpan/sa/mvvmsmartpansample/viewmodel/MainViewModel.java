@@ -3,12 +3,9 @@ package smartpan.sa.mvvmsmartpansample.viewmodel;
 import android.app.Application;
 import android.content.Context;
 
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
 import smartpan.sa.mvvmsmartpansample.model.pojo.bestlist.BestListResponse;
 import smartpan.sa.mvvmsmartpansample.model.pojo.categories.CategoriesResponse;
@@ -47,7 +44,6 @@ public class MainViewModel extends ViewModel {
     private void loadCategories() {
         compositeDisposable.add(ApiServicesCategories
                 .open(context).getCategoriesObservable()
-                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(((response, throwable) -> {
                     if (response.isSuccessful())
                         categoriesMutableLiveData.setValue(response.body());
@@ -59,7 +55,6 @@ public class MainViewModel extends ViewModel {
     private void loadBestList() {
         compositeDisposable.add(ApiServicesBestList
                 .open(context).getBestListObservable()
-                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(((response, throwable) -> {
                     if (response.isSuccessful())
                         bestListMutableLiveData.setValue(response.body());
@@ -71,7 +66,6 @@ public class MainViewModel extends ViewModel {
     private void loadSiteSlide() {
         compositeDisposable.add(ApiServicesSiteSlider
                 .open(context).getSiteSliderObservable()
-                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(((response, throwable) -> {
                     if (response.isSuccessful())
                         siteSliderMutableLiveData.setValue(response.body());
