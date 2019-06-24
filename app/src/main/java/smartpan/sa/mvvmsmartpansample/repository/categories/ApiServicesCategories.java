@@ -6,21 +6,21 @@ import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import smartpan.sa.mvvmsmartpansample.model.pojo.response.ApiResponse;
+import smartpan.sa.mvvmsmartpansample.model.pojo.categories.CategoriesResponse;
 import smartpan.sa.mvvmsmartpansample.model.utilities.api.ApiConfig;
 
-public class ApiServices {
+public class ApiServicesCategories {
 
 
-    private static ApiServices apiServices;
+    private static ApiServicesCategories apiServices;
 
     private static Retrofit retrofit;
 
-    public static synchronized ApiServices open(Context context) {
+    public static synchronized ApiServicesCategories open(Context context) {
         if (retrofit == null)
             retrofit = ApiConfig.getRetrofit(context);
         if (apiServices == null) {
-            apiServices = new ApiServices();
+            apiServices = new ApiServicesCategories();
         }
         return apiServices;
     }
@@ -29,9 +29,9 @@ public class ApiServices {
     /**
      * generate observable to get categories
      */
-    public Single<Response<ApiResponse>> getCategoriesObservable() {
+    public Single<Response<CategoriesResponse>> getCategoriesObservable() {
 
-        ApiInterface method = retrofit.create(ApiInterface.class);
+        ApiInterfaceCategories method = retrofit.create(ApiInterfaceCategories.class);
 
         return method
                 .getCategories()

@@ -1,3 +1,381 @@
 <resources>
     <string name="app_name">MVVM Smartpan Sample</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="google_maps_key">AIzaSyDCWmVbbLJNyIsDAcy8UHm0BK2-5_8dRSg</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="open_gps_massage">Please open GPS first</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="home">Home</string>
+    <string name="products">Products</string>
+    <string name="favourites">Favourites</string>
+    <string name="branches">Branches</string>
+    <string name="title_activity_products">ProductsActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_products">Our Products</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="open_setting">Go to setting</string>
+    <string name="add_cart">Add to cart</string>
+    <string name="more">More</string>
+    <string name="quant">Quantity</string>
+    <string name="available">Available</string>
+    <string name="not_available">Not available</string>
+    <string name="buy">Buy</string>
+
+    <string name="new_client">New Client</string>
+    <string name="login">Login</string>
+    <string name="client_name">Client name</string>
+    <string name="children">Children</string>
+    <string name="offers">Offers</string>
+    <string name="scan">Scan</string>
+    <string name="news">News Messages</string>
+    <string name="contact">Contact us</string>
+    <string name="cart">Cart</string>
+    <string name="prev_orders">Last Orders</string>
+    <string name="edit">Edit</string>
+    <string name="addresses">My Addresses</string>
+    <string name="change_pass">Change Password</string>
+    <string name="logout">Logout</string>
+
+    <string name="comments">Comments</string>
+    <string name="details">Details</string>
+    <string name="s">S</string>
+    <string name="m">M</string>
+    <string name="l">L</string>
+    <string name="xl">XL</string>
+    <string name="xxl">XXL</string>
+
+    <string name="end">End</string>
+
+    <string name="prod_name">Product Name</string>
+    <string name="prod_no">Item Number</string>
+    <string name="sr">SR</string>
+    <string name="prod_desc">Product Description</string>
+    <string name="colors">Colors</string>
+    <string name="sizes">Available Sizes</string>
+
+    <string name="save">Save</string>
+    <string name="language">Language</string>
+    <string name="city">City</string>
+    <string name="neighbourhood">Neighbourhood</string>
+    <string name="order_notifications">Order Notifications</string>
+    <string name="discount_notifications">Discount Notifications</string>
+    <string name="english">English</string>
+    <string name="arabic">عربي</string>
+    <string name="choose_lang">Please choose your language</string>
+
+    <string name="register_header">Registration</string>
+    <string name="register">Register</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="birth_date">Birth date</string>
+    <string name="email">Email</string>
+    <string name="pass">Password</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="phone">Telephone</string>
+    <string name="street">Street</string>
+    <string name="address">Address</string>
+    <string name="address_details">Address Details</string>
+    <string name="notifications">Notifications</string>
+    <string name="next">Next</string>
+    <string name="reg_success">Registration Successful</string>
+    <string name="reg_error">Registration Failed</string>
+
+    <string name="write">Write Comment</string>
+    <string name="code">Code</string>
+    <string name="country">Country</string>
+
+    <string name="remember_me">Remember me</string>
+    <string name="forget">Forget password ?</string>
+    <string name="forget_pass">Forget Password</string>
+    <string name="login_success">Login Successful</string>
+    <string name="login_error">Login Failed</string>
+    <string name="reg_options">You can also register by</string>
+    <string name="or">OR</string>
+
+    <string name="title_details">Details</string>
+
+    <string name="fav_add">Item Added to Favourites</string>
+    <string name="fav_remove">Item Removed from Favourites</string>
+
+    <string name="old_pass">Old Password</string>
+    <string name="new_pass">New Password</string>
+    <string name="confirm_new_pass">Confirm New Password</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="edit_info">Edit Information</string>
+    <string name="delivered">Delivered</string>
+    <string name="canceled">Canceled</string>
+
+    <string name="items_number">Items Number</string>
+    <string name="title_toolbar_orders_follow">Orders Follow</string>
+    <string name="accept_order">Accepted Order</string>
+    <string name="on_way">On Way</string>
+    <string name="name_driver">Driver name : </string>
+    <string name="done_delivered">Delivered successfully</string>
+    <string name="detail">Detail</string>
+    <string name="money">SAR</string>
+
+    <string name="title_toolbar_last_orders">Last Orders</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="product_count">Product Count</string>
+    <string name="product">Products</string>
+
+    <string name="total">Total</string>
+
+    <string name="discountcode">Discount Code</string>
+    <string name="add_offer">Add New Offer</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="company_ship">Company Shipping</string>
+    <string name="price">Price</string>
+    <string name="diccount">Discount</string>
+    <string name="vat">VAT</string>
+    <string name="delivering">Delivery</string>
+    <string name="paiementwhenreceiving">Paiement When Receiving</string>
+    <string name="payement">Pay</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+    <string name="code_enter">Insert Code</string>
+
+    <string name="title_toolbar_discount">Discount</string>
+    <string name="title_toolbar_payment">Payment</string>
+    <string name="title_toolbar_comments">Comments</string>
+
+    <string name="noComment">there is No Comments</string>
+    <string name="noLastOrder">there is No Orders</string>
+    <string name="connection_error">error in connection</string>
+    <string name="requestApproved">RequestApproved</string>
+    <string name="inWay">In The way </string>
+    <string name="drive_name">DriveName:</string>
+    <string name="order_follow">Order Follow</string>
+
+    <string name="noBranches">There is no Branches</string>
+    <string name="failedBranches">Failed to load branches</string>
+    <string name="reload">Reload Screen</string>
+    <string name="restart">Restart App</string>
+    <string name="distance_unit">KM</string>
+    <string name="hintSearchBranch">search by Branch name</string>
+    <string name="login_first">You should login first</string>
+    <string name="go_branch">Go To Branch</string>
+
+    <string name="empty_email">Please insert your email</string>
+    <string name="empty_first_name">Please insert your first name</string>
+    <string name="empty_last_name">Please insert your last name</string>
+    <string name="empty_birth_date">Please insert your birth date</string>
+    <string name="empty_pass">Please insert your password</string>
+    <string name="empty_code">Please insert your country code</string>
+    <string name="empty_phone">Please insert your phone number</string>
+    <string name="comment_successful">Comment sent successfully</string>
+    <string name="commentnotsuccessful">Comment not sent successfully </string>
+
+    <string name="message_internet_warning">No Internet Connection, please turn on WIFI or mobile data</string>
+    <string name="wifi">WIFI</string>
+    <string name="mobile_data">Mobile data</string>
+    <string name="connect">Check Internet</string>
+    <string name="connect_title">Connect with Network</string>
+    <string name="contuct_us">Contact Us</string>
+    <string name="exit"> Exit</string>
+    <string name="ok"> OK</string>
+    <string name="no"> NO</string>
+    <string name="exit_sure"> Are You Sure Exit?</string>
+    <string name="load_error">Failed to load Data , Please Reload</string>
+
+    <string name="contact_detail">Contact Detail</string>
+    <string name="contact_information">Contact Information</string>
+    <string name="contact_mail">Email Us </string>
+    <string name="mobile_no">Mobile Number </string>
+    <string name="what_up">Whats up </string>
+    <string name="name">Name </string>
+    <string name="message">message </string>
+    <string name="send">Send </string>
+
+    <string name="empty_cart">Cart is empty</string>
+
+    <string name="no_internet">No Internet connection</string>
+    <string name="check_internet">Check Internet</string>
+
+    <string name="no_Gps">Gps Disconnected</string>
+    <string name="check_Gps">Check Gps</string>
+
+    <string name="null_data">Error in loading data</string>
+    <string name="load_activity">Reload screen</string>
+
+    <string name="runtime_permissions_txt">Please enable ALL permissions from app settings.</string>
+    <string name="enable">Enable</string>
+    <string name="grant">GRANT</string>
+
+    <string name="null_customer_data">Error in loading customer data</string>
+    <string name="success_pay">Your order has been sent successfully</string>
+    <string name="add_address">Add address</string>
+    <string name="address_title">Address Title</string>
+    <string name="active">active</string>
+    <string name="address_add">Address Added Successfully</string>
+    <string name="address_edit">Address Edit Successfully</string>
+    <string name="address_choose">choose Address</string>
+    <string name="currency_tupe">choose Currency Type</string>
+    <string name="complete_choices">Select Payment Method </string>
+    <string name="invalid_code">In Valid Code </string>
+    <string name="discount_code">Discount Code </string>
+    <string name="order_sent">Order sent Successfully </string>
+    <string name="product_unit">products</string>
+    <string name="item_num">Item Number : </string>
+    <string name="item_price">Price : </string>
+    <string name="price_unit">SR</string>
+    <string name="deleveried">Delivered</string>
+    <string name="favorite">Favorite</string>
+
+    <string name="addCart">Item added to cart</string>
+    <string name="notAddCart">not add cart item detail list</string>
+    <string name="chooseColor">Please choose color and size of product..</string>
+    <string name="notInStore">Item is not available in store..</string>
+    <string name="sendcomment">You should writ comment</string>
+    <string name="logout_sure"> Are You sure to logout?</string>
+    <string name="error_connection">Please check your connection to internet </string>
+    <string name="addres_removed">Address removed successfully </string>
+
+    <string name="empty_country">please choose country </string>
+    <string name="empty_city">please enter city </string>
+    <string name="empty_district">please enter district </string>
+    <string name="empty_address">please enter address </string>
+    <string name="empty_street">please enter street </string>
+    <string name="password_changed">password changed successfully</string>
+    <string name="catalogue">Catalogue </string>
+    <string name="email_sent"> Email has been sent, Please check your mailbox.. </string>
+    <string name="complete_data"> Please choose all data </string>
+    <string name="facebook_app_id">2052394951696502</string>
+    <string name="send_message">Your Message Send Successfully</string>
+    <string name="fail_message">Your Message not sent Successfully</string>
+    <string name="name_insert">Please insert your name </string>
+    <string name="message_insert">please insert your message </string>
+    <string name="valid_mail">please insert valid mail </string>
+    <string name="take_photo">Take photo</string>
+    <string name="gallerychoose">choose from gallery</string>
+    <string name="imagechoose">choose image</string>
+    <string name="noData">Loading data failed. try again</string>
+    <string name="old_password">Please Enter your old password</string>
+    <string name="new_password">Please Enter your new password</string>
+    <string name="confirm_password">Please Re_Enter your new password</string>
+    <string name="identical_password">password not identical</string>
+    <string name="no_favourite">There are no favourite items</string>
+    <string name="logout_confirm">Confirm</string>
+    <string name="no_detail">There is no detail to show</string>
+    <string name="active_account">Please Check Your Mail to activate Your Account</string>
+    <string name="activation_sent">Resend Activation Code</string>
+    <string name="login_active">Please Write your Mail to activate Your Account</string>
+    <string name="not_approved">Under Review</string>
+    <string name="comment_add">You Added Comment Before</string>
+    <string name="error_order">Error happened Order not Sent </string>
+    <string name="available_quantity">Available Quantity</string>
+    <string name="exceed_quantity">You Can not exceed Available Quantity</string>
+    <string name="no_offer">No Offers</string>
+    <string name="no_item">No Items</string>
+    <string name="no_category">No Categories</string>
+    <string name="activation_code">Activation Code</string>
+    <string name="shipping_number">Shipping Number</string>
+    <string name="following_link">Following Link</string>
+    <string name="valid_number">Insert valid mobile number</string>
+    <string name="order_cancel">Order Cancel</string>
+    <string name="order_cancel_reason">Order Cancel Reason</string>
+    <string name="cancel_reason">You Should Select Cancel Reason</string>
+
+    <string name="cancel_reason_sucess">Order Cancelled Sucessfully</string>
+
+    <string name="cancel_reason_fail">Order Cancel Failed</string>
+
+    <string name="enter_digit">Enter 4_DIGIT Code Sent To Your Mobile </string>
+
+    <string name="resend_code">Resend Code</string>
+    <string name="loading_data">Loading.....</string>
+    <string name="Gmail_Id">987014657339-v87fg270l69r7qvk2aiprfj0ei057k0h.apps.googleusercontent.com</string>
+    <string name="latest_news">Latest News</string>
+    <string name="about_us">About Us</string>
+    <string name="product_not_available">Product Not Available</string>
+    <string name="best_offer">Best Offers</string>
+    <string name="watch_all">View All</string>
+    <string name="more_sales">Most Sales</string>
+    <string name="user_account">My Account</string>
+    <string name="our_offer">Our Offer</string>
+
+    <string name="sort_by">Sort By</string>
+    <string name="sort_by_color">Color</string>
+    <string name="sort_by_size">Size</string>
+    <string name="tax">Price Include Tax</string>
+    <string name="description">Description</string>
+    <string name="customer_evaluation">Customer Evaluation</string>
+    <string name="notify_me">Notify Me</string>
+    <string name="write_evaluation">Write Evaluation</string>
+    <string name="no_evaluation">No Evaluation</string>
+    <string name="evaluation">Evaluation</string>
+
+    <string name="evaluation_thx">Thanks For Evaluation</string>
+    <string name="evaluation_you">What is your Evaluation for this Product?</string>
+    <string name="comment"> The Comment</string>
+    <string name="add_comment"> Add Comment</string>
+
+    <string name="mobile_mail">Write Your Mobile Or Phone</string>
+    <string name="out_stock">Out Of Stock</string>
+    <string name="out_stock_notify">Notify Product Is Available</string>
+    <string name="search">Search</string>
+    <string name="clear_all">Clear All</string>
+    <string name="sort">Sorting</string>
+    <string name="currency">Currency</string>
+    <string name="orders">My Orders</string>
+    <string name="problems">Problems</string>
+    <string name="coupon">Discount Coupon</string>
+    <string name="help">Help</string>
+    <string name="google_login">Login With Google</string>
+    <string name="account_info">Account Information</string>
+    <string name="account_setting">Account Setting</string>
+    <string name="update">Update</string>
+    <string name="order_no">Order No.</string>
+    <string name="order_status">Order Status</string>
+    <string name="map">Map</string>
+    <string name="complete">Continue</string>
+    <string name="total_before">Total Before Discount</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="view">View</string>
+    <string name="enter_code">Enter Activation Code</string>
+    <string name="activation_success">Account Activated Successfully</string>
+    <string name="finish">Finish</string>
+    <string name="change">Change</string>
+    <string name="delivery_received">Payment upon receipt</string>
+    <string name="visa_pay">Payment By Banking Card</string>
+    <string name="apply">Apply</string>
+    <string name="price_total">Total Price</string>
+    <string name="thanks">Thanks for Marketing With Us</string>
+    <string name="order_received">Your Order Received We Will contact with you</string>
+    <string name="no_address">No addresses</string>
+    <string name="to_pay">To Payment</string>
+    <string name="set_address">Address must be Selected</string>
+    <string name="set_shipping">Shipping Company must be selected</string>
+    <string name="enter_discount">Enter Discount Code</string>
+    <string name="ordr_date">Order Date</string>
+    <string name="order_canceled">Order Cancelled</string>
+    <string name="main_address">Main Address</string>
+    <string name="edit_address">Edit Address</string>
+    <string name="empty_address_title">Enter Address Title</string>
+    <string name="is_main_address">Main Address Can not be deleted </string>
+    <string name="double_click"> Please Click BACK again to Exit</string>
+    <string name="transfer_enter">Enter Bank Tr. </string>
+    <string name="transfer_data">Bank Transaction Data </string>
+    <string name="transfer_warn">Please add the postage details on the Orders page within one hour or the order will be canceled</string>
+    <string name="account_name">Account Name</string>
+    <string name="bank_name">Bank transferred to it</string>
+    <string name="account_no">Account Number</string>
+    <string name="amount">Amount</string>
+    <string name="transfer_no">Transfer Number</string>
+    <string name="transfer_date">Transfer Date</string>
+    <string name="bank">Bank Name</string>
+    <string name="acount_owner">Account Owner Name</string>
+    <string name="IBAN">Transfered IBAN Number</string>
+    <string name="transfer_image">Transfer Image</string>
+    <string name="notes">Notes</string>
+    <string name="sent_successful">Sent Successful</string>
+    <string name="sent_fail">Sent Failed</string>
+
 </resources>

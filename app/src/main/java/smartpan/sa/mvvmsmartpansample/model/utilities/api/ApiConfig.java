@@ -15,32 +15,39 @@ import java.util.concurrent.TimeUnit;
 public class ApiConfig {
 
     private final static int CACHE_SIZE_BYTES = 1024 * 1024 * 2;
+    private static Retrofit retrofit;
+    private static OkHttpClient client;
 
     public static Retrofit getRetrofit(Context context) {
-        return new Retrofit.Builder()
-                .baseUrl(ApiConstants.BASE_URL)
-                .client(getClient(context))
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .build();
+        if (retrofit == null)
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(ApiConstants.BASE_URL)
+                    .client(getClient(context))
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .build();
+        return retrofit;
 
     }
 
     private static OkHttpClient getClient(Context context) {
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        if (client == null) {
+            HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+            client = new OkHttpClient.Builder()
+                    .cache(getCacheDir(context))
+                    .addInterceptor(interceptor)
+                    .connectTimeout(30, TimeUnit.SECONDS)
+                    .readTimeout(30, TimeUnit.SECONDS)
+                    .writeTimeout(30, TimeUnit.SECONDS)
+                    .build();
+        }
 
-        return new OkHttpClient.Builder()
-                .cache(getCacheDir(context))
-                .addInterceptor(interceptor)
-                .connectTimeout(30, TimeUnit.SECONDS)
-                .readTimeout(30, TimeUnit.SECONDS)
-                .writeTimeout(30, TimeUnit.SECONDS)
-                .build();
+        return client;
     }
 
 
-    public static Cache getCacheDir(Context context) {
+    private static Cache getCacheDir(Context context) {
         if (context == null) return null;
         return new Cache(context.getCacheDir(), CACHE_SIZE_BYTES);
     }

@@ -6,21 +6,21 @@ import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import smartpan.sa.mvvmsmartpansample.model.pojo.response.ApiResponse;
+import smartpan.sa.mvvmsmartpansample.model.pojo.siteslider.SiteSliderResponse;
 import smartpan.sa.mvvmsmartpansample.model.utilities.api.ApiConfig;
 
-public class ApiServices {
+public class ApiServicesSiteSlider {
 
 
-    private static ApiServices apiServices;
+    private static ApiServicesSiteSlider apiServices;
 
     private static Retrofit retrofit;
 
-    public static synchronized ApiServices open(Context context) {
+    public static synchronized ApiServicesSiteSlider open(Context context) {
         if (retrofit == null)
             retrofit = ApiConfig.getRetrofit(context);
         if (apiServices == null) {
-            apiServices = new ApiServices();
+            apiServices = new ApiServicesSiteSlider();
         }
         return apiServices;
     }
@@ -29,9 +29,9 @@ public class ApiServices {
     /**
      * generate observable to get site slider
      */
-    public Single<Response<ApiResponse>> getSiteSliderObservable() {
+    public Single<Response<SiteSliderResponse>> getSiteSliderObservable() {
 
-        ApiInterface method = retrofit.create(ApiInterface.class);
+        ApiInterfaceSiteSlider method = retrofit.create(ApiInterfaceSiteSlider.class);
 
         return method
                 .getSiteSlider()
