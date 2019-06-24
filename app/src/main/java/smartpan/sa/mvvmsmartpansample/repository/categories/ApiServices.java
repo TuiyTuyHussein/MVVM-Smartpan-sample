@@ -1,4 +1,4 @@
-package smartpan.sa.mvvmsmartpansample.model.webservices;
+package smartpan.sa.mvvmsmartpansample.repository.categories;
 
 import android.content.Context;
 
@@ -8,7 +8,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import smartpan.sa.mvvmsmartpansample.model.pojo.response.ApiResponse;
 import smartpan.sa.mvvmsmartpansample.model.utilities.api.ApiConfig;
-import smartpan.sa.mvvmsmartpansample.model.webservices.methods.ApiInterface;
 
 public class ApiServices {
 
@@ -28,7 +27,7 @@ public class ApiServices {
 
 
     /**
-     * generate observable to get info for user
+     * generate observable to get categories
      */
     public Single<Response<ApiResponse>> getCategoriesObservable() {
 

@@ -1,4 +1,4 @@
-package smartpan.sa.mvvmsmartpansample.ui.activities;
+package smartpan.sa.mvvmsmartpansample.view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
