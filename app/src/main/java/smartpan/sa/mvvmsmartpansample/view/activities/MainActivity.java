@@ -1,5 +1,6 @@
 package smartpan.sa.mvvmsmartpansample.view.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProviders;
@@ -7,6 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.os.CancellationSignal;
+
+import java.util.function.Consumer;
 
 import smartpan.sa.mvvmsmartpansample.R;
 import smartpan.sa.mvvmsmartpansample.databinding.ActivityMainBinding;
@@ -44,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         binding.rvSiteSlider.setAdapter(siteSliderListItemItemsAdapter);
     }
 
+
     private void observeRequests() {
         mainViewModel.getCategoriesMutableLiveData()
                 .observe(this, response -> categoriesAdapter.setArray(response.getCategoryList()));
@@ -55,8 +60,20 @@ public class MainActivity extends AppCompatActivity {
 
         mainViewModel.getSiteSliderMutableLiveData()
                 .observe(this, response -> siteSliderListItemItemsAdapter.setArray(response.getSiteSliderList()));
+
+
+        mainViewModel.getPermissionsRequest()
+                .observe(this, permissionsModel -> {
+
+                });
     }
 
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        mainViewModel.onPermissionResult(requestCode, permissions, grantResults);
+    }
 
     private void initDataBinding() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);

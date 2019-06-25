@@ -3,6 +3,7 @@ package smartpan.sa.mvvmsmartpansample.viewmodel;
 import android.app.Application;
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -14,7 +15,7 @@ import smartpan.sa.mvvmsmartpansample.repository.bestlist.ApiServicesBestList;
 import smartpan.sa.mvvmsmartpansample.repository.categories.ApiServicesCategories;
 import smartpan.sa.mvvmsmartpansample.repository.siteslider.ApiServicesSiteSlider;
 
-public class MainViewModel extends ViewModel {
+public class MainViewModel extends PermissionsViewModel {
 
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
     private MutableLiveData<CategoriesResponse> categoriesMutableLiveData = new MutableLiveData<>();
@@ -76,5 +77,10 @@ public class MainViewModel extends ViewModel {
 
     public void unbind() {
         compositeDisposable.clear();
+    }
+
+    @Override
+    public void onPermissionResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
     }
 }
